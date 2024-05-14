@@ -37,10 +37,8 @@ db/migrations/new:
 
 ## db/migrations/up: apply all up database migrations
 .PHONY: db/migrations/up
-db/migrations/up: confirm
-	@echo 'Running up migrations...'
-	migrate -path="./migrations" -database "postgres://greenlight:${DB_PW}@localhost/greenlight?sslmode=disable" up
-
+db/migrations/up:
+	@echo 'Are you sure? [y/N]' && powershell -Command "& { $$x = Read-Host; if ($$x -eq 'y') { migrate -path='./migrations' -database 'postgres://postgres:${DB_PW}@localhost/go?sslmode=disable' up } }"
 # ==================================================================================== #
 # QUALITY CONTROL
 # ==================================================================================== #

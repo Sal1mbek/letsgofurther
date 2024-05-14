@@ -81,7 +81,7 @@ func main() {
 
 	// Read the DSN Value from the db-dsn command-line flag into the config struct.
 	// We default to using our development DSN if no flag is provided.
-	pw := "ss123"
+	pw := os.Getenv("DB_PW")
 	flag.StringVar(&cfg.db.dsn, "db-dsn",
 		fmt.Sprintf("postgres://postgres:%s@localhost/go?sslmode=disable",
 			pw), "PostgreSQL DSN")
