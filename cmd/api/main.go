@@ -15,8 +15,6 @@ import (
 	"github.com/Sal1mbek/letsgofurther/internal/data"
 	"github.com/Sal1mbek/letsgofurther/internal/jsonlog"
 	"github.com/Sal1mbek/letsgofurther/internal/mailer"
-	"github.com/Sal1mbek/letsgofurther/internal/vcs"
-
 	// Import the pq driver so that it can register itself with the database/sql
 	// package. Note that we alias this import to the blank identifier, to stop the Go
 	// compiler complaining that the package isn't being used.
@@ -25,7 +23,7 @@ import (
 
 // Set version of application corresponding to value of vcs.Version.
 var (
-	version = vcs.Version()
+	version = "1.0.0"
 )
 
 // Define a config struct.

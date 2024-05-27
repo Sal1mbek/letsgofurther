@@ -18,7 +18,7 @@ func TestHealthcheck(t *testing.T) {
 		t.Errorf("want %d; got %d", http.StatusOK, code)
 	}
 
-	expResp := `{	
+	expResp := `{
 	"status": "available",
 	"system_info": {
 		"environment": "testing",
